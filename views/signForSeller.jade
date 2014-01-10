@@ -1,0 +1,16 @@
+extends layout
+block content
+	form.container(action='/signSellerSuccess' method='POST' style='width: 400px; height: 300px; margin-top: 100px;')
+		label(for='userName') 登录名
+		input(type='text' name='seller[userName]' class='form-control' id='userName' required)
+		br
+		label(for='password') 登录密码
+		input(type='password' name='seller[password]' class='form-control' id='password' required)
+		br
+		label(for='sellerName') 商家名称
+		input(type='text' name='seller[name]' class='form-control' id='sellerName' required)
+		br
+		label(for='sellerInfo') 商家信息
+		input(type='text' name='seller[info]' class='form-control' id='sellerInfo' required)
+		br 
+		button.btn.btn-primary(type='submit') 提交

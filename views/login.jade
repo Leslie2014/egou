@@ -1,0 +1,35 @@
+extends layout
+block css
+	link(rel='stylesheet', href='/stylesheets/login.css')
+block content
+	div.bg
+	if error
+		div#loginTest.alert.alert-danger.alert-dismissable.fade.in
+			button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
+			strong= error
+	div.midCenter.loginForm.text-center
+		div.logo
+		hr
+		form(action="/" method="POST")
+			div.formGroup
+				label(for="emailIpt") 用 户
+				input#emailIpt(type="text" name="user[name]" placeholder="请输入您的用户名" required autofocus)
+			div.formGroup
+				label(for="passwordIpt") 密 码
+				input#passwordIpt(type="password" name="user[psw]" placeholder="请输入您的密码" required)
+			div.formGroup
+				button.btn.loginBtn 登&nbsp;&nbsp;&nbsp;&nbsp;录
+			div.signup
+				a(href="/signup") 还没注册? 注册
+	div.footer.text-center
+		p 
+			span 易购公司版权所有
+			span ©1997-2013&nbsp;
+			span 粤ICP备20090191号 | 
+			span 客户端 
+			span 模板 
+			span关于 
+			span 商务合作 
+			span 官方博客 
+			span 官方微博 
+			span.right 易购团队学生作品

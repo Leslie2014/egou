@@ -1,0 +1,124 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background: #EDEEEF url('/images/bg.png') repeat-x;
+}
+#header{
+	position: relative;
+	background: url('/images/logo.png') no-repeat;
+	background-position: 50px 10px;
+	height: 82px;
+}
+#header .right{
+	position: absolute;
+	width: 300px;
+	height: 82px;
+	right: 0px;
+	top: 40px;
+}
+.right a {
+	color: #ADADAD;
+	text-shadow: 0 1px 0 #232323;
+	cursor: pointer;
+	margin: 20px;
+}
+#loginForm{
+	background: #fff;
+	padding-bottom: 5px;
+	width: 720px;
+	height: 480px;
+	position: absolute;
+	top: 82px;
+	box-shadow: 0px 0px 10px rgba(38, 41, 44, .5);
+	padding-top: 10px;
+}
+.formBottom{
+	background: url('/images/bottom.png') bottom center no-repeat;
+	width: 724px;
+	height: 10px;
+	position: absolute;
+	bottom: -10px;
+	left: -2px;
+}
+#formHeader{
+	width: 722px;
+	height: 60px;
+	background: url('/images/loginHeader.png') no-repeat;
+	background-position: -10px 0px;
+}
+.signupForm{
+	width: 400px;
+	height: 300px;
+	padding-top: 15px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 5px;
+	border: 1px dotted #C0C0C0;
+	box-shadow: 0px 0px 6px rgba(112, 121, 131, .3);
+}
+.signupForm button{
+	width: 250px;
+}
+.formGroup{
+	width: 400px;
+	height: 40px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.formGroup label{
+	float: left;
+	font-size: 14px;
+	color: #A2A7AE;
+	height: 34px;
+	width: 75px;
+	line-height: 34px;
+	border-radius: 3px 0px 0px 3px;
+	text-align: center;
+	background: -webkit-linear-gradient(top, #E7E9EB, #CBCED1);
+	background: -moz-linear-gradient(top, #E7E9EB, #CBCED1);
+	background: linear-gradient(top, #E7E9EB, #CBCED1);
+	text-shadow: 0px 1px 0px #fff;
+	margin-left: 30px;
+	border: 1px solid #cccccc;
+	border-right: none;
+}
+.formGroup input{
+	width: 255px;
+	float: left;
+	border-radius: 0px 3px 3px 0px;
+}
+.btnContainer{
+	width: 400px;
+	text-align: center;
+}
+.btnContainer #signupBtn{
+	margin-top: 20px;
+	margin-left: 35px;
+	height: 40px;
+	line-height: 20px;
+	width: 330px;
+}
+hr{
+	margin-top: 10px;
+}
+.loginText{
+	margin-top: 24px;
+	width: 720px;
+	height: 30px;
+}
+.loginText a{
+	cursor: pointer;
+	float: right;
+	font-size: 12px;
+	padding-right: 28px;
+	color: #9BA3AA;
+}
+#signUptest{
+	border-radius: 0px;
+	margin-top: -20px;
+	height: 30px;
+	padding-left: 50px;
+	padding-top: 5px;
+}

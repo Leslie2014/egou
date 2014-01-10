@@ -1,0 +1,27 @@
+extends layout
+block content
+	form.container(action='/sellerPro' enctype='multipart/form-data' method='POST' style='width: 400px; height: 300px; margin-top: 50px;')
+		input(type='hidden' name='sellername' value="#{session.sellerName}")
+		label(for='proName') 产品名称
+		input(type='text' name='product[name]' class='form-control' id='proName' required)
+		br
+		label(for='proPrice') 产品价格
+		input(type='number' name='product[price]' class='form-control' id='proPrice' required)
+		br
+		label(for='proNum') 库存数量
+		input(type='number' name='product[number]' class='form-control' id='proNum' required)
+		br
+		label(for='proType') 食品类型
+		input(type='text' name='product[type]' class='form-control' id='proType' required)
+		br
+		label(for='proPower') 有效日期
+		input(type='number' name='product[power]' class='form-control' id='proPower' required)
+		br
+		label(for='proInfo') 上传图片
+		input(type='file' name='product[img]' class='form-control')
+		input(type='file' name='product[img]' class='form-control')
+		input(type='file' name='product[img]' class='form-control')
+		input(type='file' name='product[img]' class='form-control')
+		input(type='file' name='product[img]' class='form-control')
+		br
+		button.btn.btn-primary(type='submit') 提交

@@ -1,0 +1,33 @@
+extends layout
+block css
+	link(rel='stylesheet', href='/stylesheets/signup.css')
+block content
+	div#header
+		div.right
+			a(href="/") 返回首页
+			a 卖家入口
+	div#loginForm.text-center
+		div.formBottom
+		div#formHeader 
+		hr
+		if error
+			div#signUptest.alert.alert-danger.alert-dismissable
+				button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
+				strong= error
+		form.signupForm.text-center(role="form" action="/login" method="POST")
+			div.formGroup
+				label(for="userIpt") 用户名
+				input#userIpt.form-control(type="text" name="user[name]" placeholder="请输入用户名" required autofocues)
+			div.formGroup
+				label(for="passwordIpt") 密 码
+				input#passwordIpt.form-control(type="password" name="user[psw]" placeholder="请输入密码" required)
+			div.formGroup
+				label(for="pswConfirm") 确认密码
+				input#pswConfirm.form-control(type="password" name="user[confirm]" placeholder="确认密码" required)
+			div.formGroup
+				label(for="emailIpt") 邮 箱
+				input#emailIpt.form-control(type="email" name="user[email]" placeholder="请输入邮箱地址" required)
+			div.btnContainer
+				button#signupBtn.btn.btn-lg.btn-primary.btn-block(type="submit") 注册
+		div.loginText
+			a(href="/login") 已有账号? 登录

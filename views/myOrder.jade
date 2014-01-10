@@ -1,0 +1,65 @@
+extends layout
+block css
+	link(rel='stylesheet', href='/stylesheets/sellerPro.css')
+block content
+	div.egouNav
+		div.navContent
+			if session.loggedIn
+				if session.userType === 'customer' 
+					ul.loggedUlC.all
+						li.welcomeLi
+							a(href="/") 欢迎您、
+								span#username= session.username
+						li 
+							a(href="/signOut") 退出		
+						li 
+							a(href='/userInfo') 我的信息
+						li 
+							a(href='/buyCar') 我的购物车
+						li 
+							a(href='/myOrder') 我的订单						
+				else if session.userType === 'seller'
+					ul.loggedUlS.all
+						li.welcomeLi
+							a(href="/") 欢迎您、
+								span= session.username
+						li 
+							a(href="/signOut") 退出
+						li 
+							a 数据分析
+						li 
+							a(href='/sellerPro') 我的产品	
+						li 
+							a(href='/publishPro') 发布产品			
+			else
+				ul.notLoggedUl.all
+					li.welcomeLi
+						a(href="/") 欢迎您的到来、游客
+					li 
+						a(href='/signForSeller') 商家加盟
+					li 
+						a(href="/login") 登录
+					li 
+						a(href="/signup") 注册
+	div#Box.container
+		table.table.table-striped.table-hover.table-bordered.table-condensed
+			thead
+				th 订单商品
+				th 订单图片展示
+				th 订单价格
+				th 订单数量
+				th 订单留言
+				th 确认收货
+			tbody
+				each order in allOrder
+					tr
+						td(style="font-weight: bold")= order.orderPro
+						td 
+							each image in order.orderPic
+								img(src="#{image}")
+						td(style="color: #DD0000")= order.orderPrice
+						td(style="color: #DD0000")= order.orderNum
+						td= order.orderMessage
+						td
+							button.btn.btn-primary.confirmGet 确认收货
+						

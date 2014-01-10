@@ -1,0 +1,84 @@
+extends layout
+block css
+	link(rel='stylesheet', href='/stylesheets/productTem.css')
+block content
+	div.egouNav
+		div.navContent
+			if session.loggedIn
+				if session.userType === 'customer' 
+					ul.loggedUlC.all
+						li.welcomeLi
+							a(href="/") 欢迎您、
+								span= session.username
+						li 
+							a(href="/signOut") 退出		
+						li 
+							a(href='/userInfo') 我的信息
+						li 
+							a(href='/buyCar') 我的购物车
+						li 
+							a(href='/myOrder') 我的订单						
+				else if session.userType === 'seller'
+					ul.loggedUlS.all
+						li.welcomeLi
+							a(href="/") 欢迎您、
+								span= session.username
+						li 
+							a(href="/signOut") 退出
+						li 
+							a 数据分析
+						li 
+							a(href='/sellerPro') 我的产品	
+						li 
+							a(href='/publishPro') 发布产品			
+			else
+				ul.notLoggedUl.all
+					li.welcomeLi
+						a(href="/") 欢迎您的到来、游客
+					li 
+						a(href='/signForSeller') 商家加盟
+					li 
+						a(href="/login") 登录
+					li 
+						a(href="/signup") 注册
+	div#proInfo.container
+		if info
+			div.info= info
+		div#proHeader
+			div#proImg
+				div#imgWrap
+					img(src="#{product.showImages[0]}")
+				p 
+					a 点击查看大图
+					img(src='/images/search.png' style='margin-left: 10px; margin-top: -5px;')
+			div#proData
+				p 
+					span 食品名称:
+					span.real.proName= product.proName
+				p
+					span 所属商家:
+					span.real.forSeller #{product.forSeller}(江西赣州)
+				p
+					span 库存数量:
+					span.real.number.proNum= product.proNum
+				p
+					span 价格:
+					span.real.number.price= product.price
+				p
+					span 食品类型:
+					span.real.proType= product.proType
+				p
+					span 发布日期:
+					span.real.number.publishDate #{product.publishDate.getFullYear()}-#{product.publishDate.getMonth()+1}-#{product.publishDate.getDate()}
+				p 
+					span 有效期:
+					span.real.number.powerTime= product.powerTime
+				p.last
+					a.btn.btn-danger.buy(href='/proBuy') 购买	
+					a#postAjax.btn.btn-warning(href='#') 加入购物车
+		div#proBody
+			h2.container 食品美图
+			ul
+				each proImage in product.showImages
+					li
+						img(src="#{proImage}")

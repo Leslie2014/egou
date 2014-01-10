@@ -1,0 +1,207 @@
+extends layout
+block css
+	link(rel='stylesheet', href='/stylesheets/index.css')
+block content
+	div.egouNav
+		div.navContent
+			if session.loggedIn
+				if session.userType === 'customer' 
+					ul.loggedUlC.all
+						li.welcomeLi
+							a(href="/") 欢迎您、
+								span= session.username
+						li 
+							a(href="/signOut") 退出		
+						li 
+							a(href='/userInfo') 我的信息
+						li 
+							a(href='/buyCar') 我的购物车
+						li 
+							a(href='/myOrder') 我的订单						
+				else if session.userType === 'seller'
+					ul.loggedUlS.all
+						li.welcomeLi
+							a(href="/") 欢迎您、
+								span= session.username
+						li 
+							a(href='/signOut') 退出
+						li 
+							a 数据分析
+						li 
+							a(href='/sellerPro') 我的产品	
+						li 
+							a(href='/publishPro') 发布产品			
+			else
+				ul.notLoggedUl.all
+					li.welcomeLi
+						a(href="/") 欢迎您的到来、游客
+					li 
+						a(href='/signForSeller') 商家加盟
+					li 
+						a(href="/login") 登录
+					li 
+						a(href="/signup") 注册					
+	div.egouBody
+		div.egouInfo
+			div.egouLogo
+				iframe(width="400" scrolling="no" height="70" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=2&color=%23&icon=3&num=2")
+			div.egouSearch
+				div.input-group
+					input#searchIpt(type="text" class="form-control" placeholder="请输入您要搜索的美食")
+					span#search.input-group-addon 搜 索
+		div#egouReal
+			div.egouGallary
+				ul.imgUl
+					li.firstLi
+						img(src='/images/recommend/imgIndex1.jpg')
+				  li
+						img(src='/images/recommend/imgIndex2.jpg')
+					li 
+						img(src='/images/recommend/imgIndex3.jpg')
+					li
+						img(src='/images/recommend/imgIndex4.jpg')
+					li
+						img(src='/images/recommend/imgIndex5.jpg')
+				ul.listUl
+					li.active
+					li
+					li
+					li
+					li
+				a.titleA 
+				a.contentA 
+				a.preA.directionA
+				a.nextA.directionA
+			div.dataDaily
+				p.titleP 
+					a 自然之旅 南澳大利亚8日游
+				p.contentP
+					span 
+						a 生态袋鼠岛  
+					span  | 
+						a 南澳多元文化
+					span  | 
+						a 抱考拉 乐游南澳 
+				p.titleP
+					a 美女如云 畅游南美委内瑞拉
+				p.contentP
+					span 
+						a 天使瀑布 
+					span |  
+						a 彩色的下午茶  
+					span | 
+						a 多元化的艺术国度 
+				p.titleP
+					a 寻电影镜头里的天津Style
+				p.contentP
+					span 
+						a 土豪金建筑 
+					span |  
+						a 游影视外景地 
+					span |  
+						a 津城旅游佳地 
+				ul
+					li
+						span 
+							a [主题]
+						span 
+							a 星爸萌娃亲子游
+						span 
+							a 银河夜色观星之旅
+					li
+						span 
+							a [策划]
+						span 
+							a 坐着热气球去旅行
+						span 
+							a 跟着火锅去旅行
+					li
+						span 
+							a [热门]
+						span 
+							a 星爸萌娃亲子游
+						span 
+							a 银河夜色观星之旅
+					li
+						span 
+							a [出境]
+						span 
+							a 星爸萌娃亲子游
+						span 
+							a 银河夜色观星之旅
+					li
+						span 
+							a [国内]
+						span 
+							a 天津美女聚集地
+						span 
+							a 1050块星空被认领
+			div#todayRecommend
+				div.titleOne 
+					div.fleft_span
+					h2 今日推荐
+				div.titleTwo
+				div.recBox
+					div.rBox
+						img(src="/images/recommend/r1.jpg")
+						div.rContent 
+							p.rTitle【中联商城】湧金楼 
+							p.rC
+								span 米粉黄鲶（中笼）1份！
+								span.price ￥50
+						hr
+						div.rButton
+							a.btn.btn-warning(href='/product/1386856643377') 去看看
+					div.rBox
+						img(src="/images/recommend/r2.jpg")
+						div.rContent 
+							p.rTitle【中联商城】银海之星私房菜
+							p.rC 
+								span 扣肉 1份！
+								span.price ￥50
+						hr
+						div.rButton
+							a.btn.btn-warning(href="/product/1386856678263") 去看看
+					div.rBox
+						img(src="/images/recommend/r3.jpg")
+						div.rContent 
+							p.rTitle【锅炉街】爱尚肥牛 
+							p.rC
+								span 大份牛肉卷 1份!
+								span.price ￥29
+						hr
+						div.rButton
+							a.btn.btn-warning(href="/product/1386856578183") 去看看
+					div.rBox#lastBox
+						img(src="/images/recommend/r4.jpg")
+						div.rContent 
+							p.rTitle【中联商城】御记煌焖锅店
+							p.rC
+								span 鸳鸯火锅(大锅) 1份！
+								span.price ￥40
+						hr
+						div.rButton
+							a.btn.btn-warning(href="/product/1386856609517") 去看看
+			div#theme
+				div.titleOne 
+						div.fleft_span
+						h2 特色主题
+				div.titleTwo
+				div#themeBox
+					div.tBox
+						img(src='/images/theme/1.jpg')
+						p 爽口
+					div.tBox 
+						img(src='/images/theme/2.jpg')
+						p 麻辣
+					div.tBox 
+						img(src='/images/theme/4.jpg')
+						p 清淡
+					div.tBox 
+						img(src='/images/theme/3.jpg')
+						p 香甜
+					div.tBox#lastBoxTwo
+						img(src='/images/theme/5.jpg')
+						p 西餐
+	footer	电子商务专业课程作品
+

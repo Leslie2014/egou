@@ -1,0 +1,113 @@
+body{
+	background: #D5D8DB;
+}
+.bg{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 3;
+	overflow: hidden;
+}
+
+#loginTest{
+	border-radius: 0px;
+	position: absolute;
+	height: 30px;
+	width: 400px;
+	top: 100px;
+	left: 475px;
+	z-index: 99999;
+	padding-left: 50px;
+	text-align: center;
+	padding-top: 5px;
+	border-radius: 4px;
+}
+
+.midCenter{
+	position: absolute;
+	z-index: 999;
+	width: 500px;
+	height: auto;
+	padding: 10px 0px;
+	display: none
+}
+.midCenter label{
+	color: #FFA851;
+	font-size: 16px;
+	padding: 5px;
+	background: rgba(0, 0, 0, .6);
+	border-radius: 5px 0px 0px 5px;
+}
+.midCenter button{
+	margin: 10px;
+}
+.midCenter input{
+	border: none;
+	outline:none;
+	border-radius: 0px 5px 5px 0px;
+	background: none;
+	padding-left: 10px;
+	height: 30px;
+	color: #FAFAFA;
+	width: 250px;
+	font-size: 16px;
+	background: rgba(255, 255, 255, .2);
+}
+.loginForm{
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px 7px rgba(255, 255, 255, .3);
+}
+.formGroup{
+	padding: 8px;
+}
+.loginBtn{
+	background: rgba(43, 43, 37, .9);
+	color: #fff;
+	box-shadow: 0px 0px 1px 2px rgba(235, 236, 237, .3);
+	width: 302px;
+}
+.loginBtn:hover{
+	color: #FFA851;
+	background: rgba(66, 66, 71, .6);
+}
+hr{
+	color: #484E53
+	text-shadow: 0px 1px 0px #fff ;
+	margin-top: -1px;
+}
+.logo{
+	margin: 0px;
+	background: url('/images/logo.png');
+	width: 500px;
+	height: 70px;
+}
+.footer{
+	color: #CDCDCD;
+	position: absolute;
+	bottom: 0px;
+	z-index: 10;
+	font-size: 12px;
+}
+.footer p{
+	padding-left: 30px;
+	line-height: 20px;
+}
+.footer p span{
+	padding: 5px;
+}
+span.right{
+	color: #F77B00;
+	margin-left: 550px;
+}
+div.signup {
+	cursor: pointer;
+}
+div.signup a{
+	color: #F2F3F4;
+	float: right;
+	font-size: 12px;
+	margin-right: 10px;
+	padding: 2px;
+	text-align: center;
+}

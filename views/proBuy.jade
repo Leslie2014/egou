@@ -1,0 +1,61 @@
+extends layout
+block css
+	link(rel='stylesheet', href='/stylesheets/productTem.css')
+block content
+	div.egouNav
+		div.navContent
+			if session.loggedIn
+				if session.userType === 'customer' 
+					ul.loggedUlC.all
+						li.welcomeLi
+							a(href="/") 欢迎您、
+								span= session.username
+						li 
+							a(href="/signOut") 退出		
+						li 
+							a(href='/userInfo') 我的信息
+						li 
+							a(href='/buyCar') 我的购物车
+						li 
+							a(href='/myOrder') 我的订单						
+				else if session.userType === 'seller'
+					ul.loggedUlS.all
+						li.welcomeLi
+							a(href="/") 欢迎您、
+								span= session.username
+						li 
+							a(href="/signOut") 退出
+						li 
+							a 数据分析
+						li 
+							a(href='/sellerPro') 我的产品	
+						li 
+							a(href='/publishPro') 发布产品			
+			else
+				ul.notLoggedUl.all
+					li.welcomeLi
+						a(href="/") 欢迎您的到来、游客
+					li 
+						a(href='/signForSeller') 商家加盟
+					li 
+						a(href="/login") 登录
+					li 
+						a(href="/signup") 注册
+	div#proData.container(style='width: 400px; height: 200px; margin: 100px auto;')
+		h2(style="font-size: 14px; font-weight: bold;") 您的订单信息如下:
+		p 
+			span 食品名称
+			span.real(style='width: 120px; text-align: center; color:#C40000;')= session.nowView.proName
+		p(style='border-bottom: 1px solid  #E2E8EB')
+			span 库存数量
+			span.real(style='width: 100px; text-align: center; color:#C40000;')= session.nowView.proNum
+	form.container(action='/myOrder' enctype='multipart/form-data' method='POST' style='width: 400px; height: 300px; margin-top: -150px;')
+		input(type='hidden' name='proName' value="#{session.nowView.proName}")
+		input(type='hidden' name='price' value="#{session.nowView.price}")
+		label(for='buyNum') 购买数量
+		input(type='number' name='buy[number]' class='form-control' id='buyNum' required)
+		br
+		label(for='buyMessage') 给卖家留言
+		input(type='text' name='buy[message]' class='form-control' id='buyMessage' required)
+		br
+		button.btn.btn-primary(type='submit') 确认购买

@@ -1,0 +1,14 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+		block css
+			link(rel='stylesheet', href='/stylesheets/egou.css')
+body
+	block content
+	block script
+		script(type='text/javascript', src='/javascripts/jquery.js')
+		script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+		script(type='text/javascript', src='/javascripts/egou.js')
+		script(type='text/javascript', src='/javascripts/jquery.easing.1.3.js')

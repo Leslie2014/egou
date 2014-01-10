@@ -1,0 +1,42 @@
+extends layout
+block css
+	link(rel='stylesheet', href='/stylesheets/sellerPro.css')
+block content
+	div.egouNav
+		div.navContent
+			ul.loggedUlS.all
+				li.welcomeLi
+					a(href="/") 欢迎您、
+						span= session.username
+				li 
+					a(href="/signOut") 退出
+				li 
+					a 数据分析
+				li 
+					a 我的信息
+				li 
+					a(href='/sellerPro') 我的产品	
+				li 
+					a(href='/publishPro') 发布产品
+				li
+					a(href='/') 首页
+	div#Box.container
+		table.table.table-striped.table-hover.table-bordered.table-condensed
+			thead
+				th 食品名称
+				th 食品价格
+				th 有效日期
+				th 库存数量
+				th 食品美图
+				th 发布日期
+			tbody
+				each product in allProduct
+					tr
+						td= product.proName
+						td= product.price
+						td= product.powerTime
+						td= product.proNum
+						td
+							each images in product.showImages
+								img(src="#{images}")
+						td #{product.publishDate.getFullYear()}-#{product.publishDate.getMonth()+1}-#{product.publishDate.getDate()}

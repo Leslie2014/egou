@@ -1,0 +1,168 @@
+.egouNav{
+	width: 100%;
+	height: 30px;
+	background: #fff;
+	border-bottom: 1px solid #DBDDDF;
+	z-index: 99999;
+}
+.navContent{
+	width: 1000px;
+	margin: 0 auto;
+}
+.notLoggedUl{
+	width: 1000px;
+	height: 30px;
+}
+.loggedUlC, .loggedUlS{
+	width: 1000px;
+	height: 30px;
+}
+.notLoggedUl li, .loggedUlS li, .loggedUlC li{
+	float: right;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	list-style: none;
+}
+.notLoggedUl li.welcomeLi, .loggedUlS li.welcomeLi, .loggedUlC li.welcomeLi{
+	float: left;
+	width: 150px;
+}
+.all li a {
+	text-align: center;
+	display: block;
+	cursor: pointer;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	color: #707070;
+	text-shadow: 0px 1px 0px #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+.all li.welcomeLi a{
+	text-align: left;
+	width: 150px;
+}
+.all li a:hover{
+	color: #3D3D3D;
+	width: 80px;
+	height: 30px;
+	text-decoration: none;
+}
+.all li.welcomeLi a:hover{
+	width: 150px;
+}
+#proInfo{
+	width: 1000px;
+	height: auto;
+	margin: 30px auto;
+}
+#proHeader{
+	width: 1000px;
+	height: 420px;
+}
+#proHeader div{
+	float: left;
+}
+#proImg{
+	width: 292px;
+	height: auto;
+	
+}
+#proImg p{
+	text-align: center;
+	color: #565E65;
+	height: 30px;
+	width: 100%;
+	padding-top: 10px;
+	clear: both;
+}
+#imgWrap{
+	padding: 5px;
+	border: 1px solid #DEE0E2;
+	box-shadow: 0px 0px 4px #44494F;
+}
+#proImg #imgWrap img{
+	width: 280px;
+	height: 250px;
+}
+#proData{
+	width: 500px;
+	height: auto;
+	text-align: left;
+	margin-left: 50px;
+}
+#proData p{
+	border: 1px solid #E2E8EB;
+	border-bottom: none;
+	width: 100%;
+	padding-left: 40px;
+	height: 40px;
+	line-height: 40px;
+	margin: 0px;
+}
+#proData p.last{
+	padding-left: 160px;
+	border-bottom: 1px solid #E2E8EB;
+	height: 50px;
+	line-height: 50px;
+}
+#proData p.last a{
+	margin: 5px 20px;
+	margin-top: 0px;
+}
+#proData p.last a.buy{
+	width: 100px;
+}
+#proData span{
+	font-weight: 600;
+	display: block;
+	height: 100%;
+	width: 100px;
+	color: #8B8B8B;
+	text-align: center;
+	float: left;
+	border-right: 1px solid #E7E7E7;
+}
+#proData span.real{
+	padding-left: 10px;
+	border-right: none;
+	color: #616161;
+	width: 300px;
+}
+
+#proData span.number{
+	color: #DB0000;
+}
+#proData span.proName{
+	color: #EC7600;
+	font-size: 20px;
+}
+#proBody ul{
+	padding: 10px;
+	box-shadow: 0px 0px 4px #44494F;
+}
+#proBody ul li{
+	margin: 10px auto;
+	width: 612px;
+	height: auto;
+	text-align: center;
+	padding: 5px;
+	border: 1px solid #DEE0E2;
+	list-style: none;
+}
+#proBody img{
+	width: 600px;
+	height: 400px;
+}
+#proBody h2{
+	text-align: center;
+	font-weight: bold;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	color: #BD0000;
+	border: 1px solid #DEE0E2;
+	box-shadow: 0px 0px 4px #44494F;
+}
